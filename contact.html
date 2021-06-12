@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Landing Page</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="./style.css" />
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600&family=Indie+Flower&family=Open+Sans+Condensed:ital,wght@0,300;1,300&family=Philosopher:ital,wght@0,700;1,400&family=Roboto+Condensed:ital,wght@0,400;0,700;1,300;1,400&family=Sigmar+One&display=swap"
+      rel="stylesheet"
+    />
+    <!-- awesomefonts -->
+    <script
+      src="https://kit.fontawesome.com/6f654f2ea2.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <main class="contact">
+      <video autoplay muted loop id="my-video">
+        <source src="./img/Field - 39990 (1).mp4" type="video/mp4" />
+        Sorry, your browser does not support embedded videos
+      </video>
+      <div class="global-form">
+        <div class="contact-title">
+          <h1>Tell us something</h1>
+        </div>
+        <form
+          action="https://formspree.io/f/xpzkdlez"
+          method="POST"
+          class="form"
+        >
+          <div class="contact-info">
+            <h4>your info</h4>
+            <!-- input -->
+            <input type="name" placeholder="name" name="name" />
+            <!-- input -->
+            <input type="email" placeholder="email" name="email" />
+            <!-- input -->
+            <input type="text" placeholder="Phone number" name="phone" />
+          </div>
+          <div class="text-area">
+            <!-- input -->
+            <input type="text" placeholder="subject" name="titulo" />
+            <textarea name="messege" rows="5" class="text-form"></textarea>
+            <button type="submit" class="btn btn-form">Submit</button>
+          </div>
+        </form>
+      </div>
+    </main>
+    <!-- back home -->
+    <div class="back-home">
+      <a class="back" href="index.html">back home</a>
+    </div>
+    <!-- end back home -->
+  </body>
+</html>
