@@ -5,6 +5,7 @@
 * {
   margin: 0;
   padding: 0;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 :root {
@@ -42,8 +43,14 @@ img {
   width: 100%;
 }
 .back-home {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
   justify-content: start;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   height: 8rem;
   padding-left: 2rem;
@@ -53,6 +60,14 @@ img {
   text-decoration: none;
   text-transform: uppercase;
   color: black;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#e66465),
+    to(#9198e5)
+  );
+  background: -o-linear-gradient(#e66465, #9198e5);
   background: linear-gradient(#e66465, #9198e5);
   font-family: var(--OpenSand-);
   font-weight: 600;
@@ -79,6 +94,14 @@ HOME PAGE
   color: white;
 }
 .navbar {
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#e66465),
+    to(#9198e5)
+  );
+  background: -o-linear-gradient(#e66465, #9198e5);
   background: linear-gradient(#e66465, #9198e5);
 }
 
@@ -102,6 +125,16 @@ HOME PAGE
   color: white;
 }
 .hero {
+  background: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(rgba(0, 0, 0, 0.1)),
+      to(rgba(0, 0, 0, 0.1))
+    ),
+    url(./img/background\ hero.png) center/cover no-repeat;
+  background: -o-linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+    url(./img/background\ hero.png) center/cover no-repeat;
   background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
     url(./img/background\ hero.png) center/cover no-repeat;
   display: grid;
@@ -123,8 +156,14 @@ HOME PAGE
 }
 
 .footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   height: 3rem;
   background-color: black;
@@ -173,8 +212,15 @@ Producto
   min-height: 100vh;
   background: url(./img/nature-3044755_1920.jpg) center/cover no-repeat;
   text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+  -ms-flex-direction: column-reverse;
   flex-direction: column-reverse;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   padding: 0.5rem;
 }
@@ -201,14 +247,28 @@ Producto
 }
 .cta {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-animation: img-animation 1.3s ease;
   animation: img-animation 1.3s ease;
 }
 .btn-cta {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   height: 3rem;
   width: 8rem;
@@ -219,7 +279,10 @@ Producto
   font-size: 1.5rem;
   font-weight: 700;
   color: pink;
+  -webkit-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
   transition: all 0.3s linear;
+  -webkit-animation: cta 1.5s infinite;
   animation: cta 1.5s infinite;
 }
 .btn-cta:hover {
@@ -233,25 +296,60 @@ Producto
   text-transform: uppercase;
 }
 
-@keyframes img-animation {
+@-webkit-keyframes img-animation {
   0% {
+    -webkit-transform: translateX(1000px);
     transform: translateX(1000px);
   }
   50% {
+    -webkit-transform: translateX(-50px);
     transform: translateX(-50px);
   }
   100% {
+    -webkit-transform: translateY(0px);
     transform: translateY(0px);
+  }
+}
+
+@keyframes img-animation {
+  0% {
+    -webkit-transform: translateX(1000px);
+    transform: translateX(1000px);
+  }
+  50% {
+    -webkit-transform: translateX(-50px);
+    transform: translateX(-50px);
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+}
+@-webkit-keyframes cta {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
   }
 }
 @keyframes cta {
   0% {
+    -webkit-transform: scale(1);
     transform: scale(1);
   }
   50% {
+    -webkit-transform: scale(1.1);
     transform: scale(1.1);
   }
   100% {
+    -webkit-transform: scale(1);
     transform: scale(1);
   }
 }
@@ -263,6 +361,9 @@ Producto
     place-items: center;
   }
   .cta {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: column-reverse;
     flex-direction: column-reverse;
     padding-bottom: 1rem;
     padding-top: 0;
@@ -296,6 +397,8 @@ Contact
 .contact {
   min-height: 100vh;
   display: grid;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   padding: 1rem;
 }
@@ -313,10 +416,16 @@ Contact
   margin-right: auto;
   background: rgba(230, 100, 101, 0.7);
   border-radius: 2%;
+  -webkit-box-shadow: 4px 4px 15px black;
   box-shadow: 4px 4px 15px black;
 }
 .contact-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   margin-bottom: 1rem;
   border: transparent;
@@ -328,7 +437,12 @@ Contact
   color: white;
 }
 .text-area {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
 }
 .text-form {
@@ -343,6 +457,8 @@ Contact
 }
 .btn-form {
   margin-top: 1rem;
+  -webkit-transition: all 0.3 linear;
+  -o-transition: all 0.3 linear;
   transition: all 0.3 linear;
   font-size: 1.2rem;
   cursor: pointer;
@@ -374,12 +490,19 @@ Contact
 @media screen and (min-width: 678px) {
   .contact {
     height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     place-content: center;
   }
 
   .form {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     place-items: center;
   }
@@ -421,6 +544,7 @@ Cupon
   text-align: center;
   margin-bottom: 0.5rem;
   background-color: #ff0000;
+  background-image: -o-linear-gradient(135deg, #ff0000 0%, #ffed00 74%);
   background-image: linear-gradient(315deg, #ff0000 0%, #ffed00 74%);
   color: black;
   height: 3rem;
@@ -434,11 +558,16 @@ Cupon
 .menu {
   max-width: 1170px;
   display: grid;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -ms-flex-line-pack: center;
   align-content: center;
 }
 .main-ofert {
   position: relative;
+  -webkit-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
   transition: all 0.3s linear;
   overflow: hidden;
   border-radius: 20px;
@@ -446,10 +575,15 @@ Cupon
 
 .main-ofert img {
   height: 100%;
+  -o-object-fit: cover;
   object-fit: cover;
+  -webkit-transition: all 0.5s linear;
+  -o-transition: all 0.5s linear;
   transition: all 0.5s linear;
 }
 .main-ofert img:hover {
+  -webkit-transform: scale(1.3);
+  -ms-transform: scale(1.3);
   transform: scale(1.3);
 }
 
@@ -484,13 +618,20 @@ Cupon
   grid-template-columns: 2fr 1fr;
   place-items: center;
   text-align: center;
+  -webkit-box-shadow: 5px 5px 5px brown;
   box-shadow: 5px 5px 5px brown;
+  -webkit-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
   transition: all 0.3s linear;
 }
 .deal-1:hover {
   background-color: #ff0000;
+  background-image: -o-linear-gradient(135deg, #ff0000 0%, #ffed00 74%);
   background-image: linear-gradient(315deg, #ff0000 0%, #ffed00 74%);
+  -webkit-box-shadow: 5px 5px 5px yellow;
   box-shadow: 5px 5px 5px yellow;
+  -webkit-transform: translateX(0.5rem);
+  -ms-transform: translateX(0.5rem);
   transform: translateX(0.5rem);
 }
 
@@ -522,6 +663,7 @@ Cupon
     margin-top: 0;
     display: grid;
     grid-template-columns: 1fr;
+    -ms-flex-line-pack: center;
     align-content: center;
     gap: 1rem;
   }
@@ -545,6 +687,16 @@ News letter
  */
 .body-news {
   background: rgb(2, 0, 36);
+  background: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(rgba(2, 0, 36, 0.5)),
+      to(rgba(0, 212, 255, 0.5))
+    ),
+    url(./img/maldives-1993704_1920.jpg) center/cover no-repeat;
+  background: -o-linear-gradient(rgba(2, 0, 36, 0.5), rgba(0, 212, 255, 0.5)),
+    url(./img/maldives-1993704_1920.jpg) center/cover no-repeat;
   background: linear-gradient(rgba(2, 0, 36, 0.5), rgba(0, 212, 255, 0.5)),
     url(./img/maldives-1993704_1920.jpg) center/cover no-repeat;
   padding: 0.5rem;
@@ -557,9 +709,15 @@ News letter
 .news-navbar ul {
   width: 100%;
   height: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   gap: 2rem;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
   justify-content: flex-end;
 }
 .news-navbar li {
@@ -580,6 +738,7 @@ News letter
 .news-main {
   min-height: calc(100vh - 6rem);
   display: grid;
+  -ms-flex-line-pack: center;
   align-content: center;
 }
 
@@ -617,6 +776,14 @@ News letter
   border-radius: none;
 }
 .news-btn:hover {
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(rgba(2, 0, 36, 0.5)),
+    to(rgba(0, 212, 255, 0.5))
+  );
+  background: -o-linear-gradient(rgba(2, 0, 36, 0.5), rgba(0, 212, 255, 0.5));
   background: linear-gradient(rgba(2, 0, 36, 0.5), rgba(0, 212, 255, 0.5));
   color: black;
 }
